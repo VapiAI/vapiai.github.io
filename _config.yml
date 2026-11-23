@@ -1,0 +1,10 @@
+# GitHub Pages builds this site with Jekyll.
+#
+# A page written in Markdown (privacy/index.md) is wrapped in
+# _layouts/default.html, which follows the visitor's system light or dark
+# theme. To update such a page, edit its .md file and merge to main.
+# Plain .html files are served as they are.
+
+# GitHub Flavored Markdown, the dialect GitHub renders in the repository view.
+# The Pages default (kramdown) would also turn straight quotes into curly ones.
+markdown: GFM
