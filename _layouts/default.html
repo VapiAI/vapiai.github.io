@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{{ page.title | escape }}</title>
+    {% if page.description %}
+    <meta name="description" content="{{ page.description | escape }}" />
+    {% endif %}
+    <style>
+      /* Colors follow the visitor's system theme. */
+      :root {
+        color-scheme: light dark;
+        --page-bg: #ffffff;
+        --page-text: #3f3f46;
+        --page-heading: #09090b;
+        --page-border: #e4e4e7;
+        --page-link: #0f766e;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --page-bg: #09090b;
+          --page-text: #d4d4d8;
+          --page-heading: #fafafa;
+          --page-border: #27272a;
+          --page-link: #5eead4;
+        }
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--page-bg);
+        color: var(--page-text);
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          "Helvetica Neue",
+          Arial,
+          sans-serif;
+        font-size: 1rem;
+        line-height: 1.7;
+        -webkit-text-size-adjust: 100%;
+      }
+      header,
+      main {
+        max-width: 46rem;
+        margin: 0 auto;
+        padding-inline: 1.5rem;
+      }
+      header {
+        padding-block: 1.5rem;
+      }
+      header a {
+        color: var(--page-heading);
+        font-size: 1.125rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        text-decoration: none;
+      }
+      main {
+        padding-block: 1.5rem 4rem;
+        overflow-wrap: break-word;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      strong {
+        color: var(--page-heading);
+      }
+      h1 {
+        margin: 0 0 1rem;
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+      h2 {
+        margin: 2.5rem 0 0.75rem;
+        font-size: 1.375rem;
+        line-height: 1.3;
+      }
+      h3 {
+        margin: 2rem 0 0.5rem;
+        font-size: 1.125rem;
+        line-height: 1.4;
+      }
+      h4,
+      h5,
+      h6 {
+        margin: 1.5rem 0 0.5rem;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      p,
+      ul,
+      ol,
+      blockquote,
+      table {
+        margin: 0 0 1rem;
+      }
+      ul,
+      ol {
+        padding-left: 1.875rem;
+      }
+      li {
+        margin-bottom: 0.5rem;
+      }
+      li > ul,
+      li > ol {
+        margin-top: 0.5rem;
+      }
+      /* Markdown quotes mark indented paragraphs, not quotations. */
+      blockquote {
+        padding-left: 1.875rem;
+      }
+      main a {
+        color: var(--page-link);
+        text-underline-offset: 0.15em;
+      }
+      .uppercase {
+        text-transform: uppercase;
+      }
+      hr {
+        margin: 2rem 0;
+        border: 0;
+        border-top: 1px solid var(--page-border);
+      }
+      table {
+        display: block;
+        overflow-x: auto;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 0.5rem 0.75rem;
+        border: 1px solid var(--page-border);
+        text-align: left;
+        vertical-align: top;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="https://vapi.ai">Vapi</a>
+    </header>
+    <main>
+      {{ content }}
+    </main>
+  </body>
+</html>
